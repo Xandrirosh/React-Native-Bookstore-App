@@ -95,7 +95,7 @@ export const login = async (req, res) => {
         const accessToken = generateToken(user._id)
 
         return res.status(201).json({
-            message: "User registered successfully",
+            message: "Login successfully",
             success: true,
             error: false,
             data: {
