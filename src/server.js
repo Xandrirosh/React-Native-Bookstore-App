@@ -6,11 +6,16 @@ import cookieParser from "cookie-parser";
 import authRouter from "./routes/authRoutes.js";
 import { connectDB } from './lib/db.js'
 import bookRouter from "./routes/bookRoutes.js";
+import job from './lib/cron.js'
+
 
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 5000
 
+app.start(job) // Start the cron job
+
+//middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
