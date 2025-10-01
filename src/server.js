@@ -13,7 +13,7 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 5000
 
-app.start() // Start the cron job
+job.start() // Start the cron job
 
 //middlewares
 app.use(express.json())
