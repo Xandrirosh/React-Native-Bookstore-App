@@ -67,7 +67,7 @@ export const getAllBooks = async (req, res) => {
             message: "Books retrieved successfully",
             success: true,
             error: false,
-            data: books,
+            books,
             totalPages: Math.ceil(totalBooks / limit),
             currentPage: page,
             totalBooks
