@@ -56,7 +56,8 @@ export const getAllBooks = async (req, res) => {
         const limit = req.query.limit || 5;
         const skip = (page - 1) * limit;
 
-        const books = await (await bookModel.find())
+        const books = await bookModel
+            .find()
             .sort({ createdAt: -1 })
             .skip(skip)
             .limit(limit)
